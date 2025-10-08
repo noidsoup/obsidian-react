@@ -18,16 +18,17 @@
     "sync:clean": "python sync/sync_obsidian.py --clean"
   },
   "dependencies": {
+    "adm-zip": "^0.5.10",
+    "formidable": "^3.5.1",
+    "gray-matter": "^4.0.3",
     "next": "15.0.2",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "gray-matter": "^4.0.3",
-    "adm-zip": "^0.5.10",
-    "formidable": "^3.5.1"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/react": "^14.1.2",
+    "@types/adm-zip": "^0.5.7",
     "@types/jest": "^29.5.11",
     "@types/node": "^20",
     "@types/react": "^18",
@@ -37,4 +38,3 @@
     "typescript": "^5"
   }
 }
-
