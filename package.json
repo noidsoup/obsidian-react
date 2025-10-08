@@ -1,0 +1,40 @@
+{
+  "name": "obsidian-react",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "test": "jest --watch",
+    "test:ci": "jest --ci",
+    "test:sync": "python sync/__tests__/sync.test.py",
+    "test:all": "npm run test:ci && npm run test:sync",
+    "prebuild": "node scripts/prebuild.js",
+    "build": "npm run test:all && next build",
+    "build:netlify": "node scripts/prebuild.js && npm run test:ci && next build",
+    "start": "npx serve@latest out -l 3000",
+    "import-vault": "node scripts/import-vault.js",
+    "sync": "python sync/sync_obsidian.py",
+    "sync:watch": "python sync/sync_obsidian.py --watch",
+    "sync:clean": "python sync/sync_obsidian.py --clean"
+  },
+  "dependencies": {
+    "next": "15.0.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "gray-matter": "^4.0.3",
+    "adm-zip": "^0.5.10",
+    "formidable": "^3.5.1"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
+    "@types/jest": "^29.5.11",
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "typescript": "^5"
+  }
+}
+

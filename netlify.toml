@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build:netlify"
+  publish = "out"
+
+# Build environment
+[build.environment]
+  NODE_VERSION = "20"
+
+# Note: Place vault.zip in repo root before deploying
+# Build process will automatically extract it to /vault folder
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+

@@ -1,0 +1,25 @@
+node_modules
+.next
+out
+.env*.local
+.DS_Store
+coverage
+*.log
+
+# Sync config (contains personal vault path)
+sync.config.json
+
+# Uploads (user-uploaded zip files)
+uploads/
+
+# Vault zip is committed to repo
+# vault.zip
+
+# Vault folder is generated at build time
+vault/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/

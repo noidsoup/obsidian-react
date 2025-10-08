@@ -1,0 +1,5 @@
+# Python dependencies for sync system
+
+# Optional: For watch mode
+watchdog>=3.0.0
+
