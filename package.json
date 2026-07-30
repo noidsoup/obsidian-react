@@ -15,7 +15,8 @@
     "import-vault": "node scripts/import-vault.js",
     "sync": "python sync/sync_obsidian.py",
     "sync:watch": "python sync/sync_obsidian.py --watch",
-    "sync:clean": "python sync/sync_obsidian.py --clean"
+    "sync:clean": "python sync/sync_obsidian.py --clean",
+    "verify": "bash .verify.sh"
   },
   "dependencies": {
     "adm-zip": "^0.5.10",
