@@ -1,0 +1,42 @@
+.verify.sh
+  s_06f5346c60fbca::t_96e70e08076317 43-44,47-48
+  s_06f5346c60fbca::t_dd2c4c2058da49 38-42,45-46,49-52
+AGENTS.md
+  s_06f5346c60fbca::t_96e09933eb0951 1,3-4,6,10-14,18-24,29-37,44-53
+.claude/CLAUDE.md
+  s_06f5346c60fbca::t_79085ac88a2ea4 1-2
+.claude/launch.json
+  s_06f5346c60fbca::t_1751a227169c41 1-14
+.claude/rules/context7.md
+  s_06f5346c60fbca::t_2f41c04b014c4f 3
+.claude/rules/llm-wiki.md
+  s_06f5346c60fbca::t_3359d0b22be45d 2-3
+.claude/rules/project-knowledge-lancedb.md
+  s_06f5346c60fbca::t_cbdf1461f0c47c 22
+.cursor/context7-libraries.md
+  s_06f5346c60fbca::t_5ab16e027aaddd 11
+.gitignore
+  s_06f5346c60fbca::t_013e0b5c031566 4,29-32
+"obsidian-react wiki/decisions/0001-lancedb-python-sidecar-retrieval.md"
+  s_06f5346c60fbca::t_118f75869ef00a 26
+"obsidian-react wiki/entities/lancedb-project-knowledge.md"
+  s_06f5346c60fbca::t_032642534da86e 27
+scripts/project_knowledge_lancedb_common.py
+  s_06f5346c60fbca::t_8331ccad9fa143 51,75-79
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "da9606c3dbad0a91d55eac78aabac5d11e6bb62e",
+  "prompts": {},
+  "sessions": {
+    "s_06f5346c60fbca": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "5b71ad59-634f-4102-bcc8-fe6290effea6",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "nicholas andrew eymann <thedao@nicholass-Mac-Studio.local>"
+    }
+  }
+}
