@@ -35,7 +35,21 @@ run_py_tool() {  # run_py_tool <tool> <args...>
   return 127
 }
 
-run_step "npm run test" npm run test
+# Hand-fixed: `npm run test` is `jest --watch`, which never exits and only runs
+# tests for changed files, so the gate runs Jest once with test:ci.
+run_step "npm run test:ci" npm run test:ci
+
+# package.json's test:sync calls `python`, and macOS only ships `python3`. When
+# `python` is missing, put a temporary `python` wrapper for python3 first on PATH.
+# (A symlink does not work: /usr/bin/python3 is an xcrun stub that reads its name.)
+if ! command -v python >/dev/null 2>&1 && command -v python3 >/dev/null 2>&1; then
+  PY_SHIM_DIR="$(mktemp -d)"
+  printf '#!/bin/sh\nexec python3 "$@"\n' > "$PY_SHIM_DIR/python"
+  chmod +x "$PY_SHIM_DIR/python"
+  trap 'rm -f "$PY_SHIM_DIR/python"; rmdir "$PY_SHIM_DIR"' EXIT
+  export PATH="$PY_SHIM_DIR:$PATH"
+fi
+# prebuild (vault.zip -> vault/) + test:all (Jest + Python sync tests) + next build
 run_step "npm run build" npm run build
 
 if [ "$FAILED" -eq 0 ]; then

@@ -8,4 +8,4 @@ Pre-resolved IDs for stack docs. Use **`resolve-library-id`** if an ID fails or 
 | UI | React | `/facebook/react` | From package.json. |
 | Language | Python | `/websites/python_3_12` | From Python deps. |
 
-**Credentials:** Context7 MCP requires `CONTEXT7_API_KEY` in Cursor MCP config (`~/.cursor/mcp.json`) or env.
+**Credentials:** the Context7 MCP server reads `CONTEXT7_API_KEY` from the environment (Claude Code user MCP config, `~/.claude.json`).

@@ -1,8 +1,7 @@
 ---
 description: Use Context7 for current framework, SDK, and API docs
-globs:
+paths:
   - "**/*"
-alwaysApply: false
 ---
 
 # Context7

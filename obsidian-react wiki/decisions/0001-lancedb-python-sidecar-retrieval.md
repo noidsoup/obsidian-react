@@ -23,7 +23,7 @@ obsidian-react is a **Next.js** repo without a native Python runtime. Agents sti
 
 ## Decision
 
-Adopt **Option A: Python sidecar**. Ship `scripts/index_project_knowledge_lancedb.py`, `scripts/search_project_knowledge_lancedb.py`, `scripts/project_knowledge_lancedb_common.py`, `requirements-lancedb.txt`, and `.cursor/rules/project-knowledge-lancedb.mdc`. Index store under gitignored `uncommitted/lancedb_project_knowledge/`.
+Adopt **Option A: Python sidecar**. Ship `scripts/index_project_knowledge_lancedb.py`, `scripts/search_project_knowledge_lancedb.py`, `scripts/project_knowledge_lancedb_common.py`, `requirements-lancedb.txt`, and `.claude/rules/project-knowledge-lancedb.md`. Index store under gitignored `uncommitted/lancedb_project_knowledge/`.
 
 ## Consequences
 

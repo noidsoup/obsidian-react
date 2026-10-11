@@ -1,6 +1,7 @@
 node_modules
 .next
 out
+.env
 .env*.local
 .DS_Store
 coverage
@@ -25,3 +26,7 @@ __pycache__/
 .pytest_cache/
 uncommitted/
 .loops
+
+# Claude Code local state
+.claude/worktrees/
+.claude/settings.local.json
