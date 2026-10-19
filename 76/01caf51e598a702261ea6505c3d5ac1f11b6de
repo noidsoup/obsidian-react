@@ -1,0 +1,65 @@
+wiki/overview.md
+  s_3005a246dc665b::t_d2206a9727b88b 1-51
+wiki/decisions/0002-static-export-not-upload.md
+  s_3005a246dc665b::t_b8da5b13e3acdb 1-36
+wiki/gotchas.md
+  s_3005a246dc665b::t_f50848539b1b20 1-28
+.claude/rules/llm-wiki.md
+  s_3005a246dc665b::t_97aa02ae53a667 4,9,15
+AGENTS.md
+  s_3005a246dc665b::t_bea472d2602878 8-10,17
+WIKI.md
+  s_3005a246dc665b::t_f6f69837d412ca 1,3,5-6
+wiki/SCHEMA.md
+  s_3005a246dc665b::t_50e3b9babb6817 1-11,13,15,17,19-21,23,26-36,39,43-46,49-51,55,57,59-65,69-72,74,76-80
+wiki/concepts/obsidian-bases-yaml-frontmatter.md
+  s_3005a246dc665b::t_b516bd4391d55e 9-10
+wiki/concepts/tdd-proof-chain.md
+  s_3005a246dc665b::t_3e829a7ed8d27f 10-11
+wiki/concepts/vault-content-paths.md
+  s_3005a246dc665b::t_698020be12f901 5,9-10,23,25-26,30
+wiki/decisions/0001-lancedb-python-sidecar-retrieval.md
+  s_3005a246dc665b::t_b0beb3fdb66053 7-9
+wiki/entities/lancedb-project-knowledge.md
+  s_3005a246dc665b::t_dcacc9225cb31e 5,9-10,36-37
+wiki/entities/netlify-static-deploy.md
+  s_3005a246dc665b::t_36fbb2fed4958b 5,9-10,30,38
+wiki/entities/obsidian-react-app.md
+  s_3005a246dc665b::t_34c0cd9a5f7527 5,10-11,24,32
+wiki/entities/obsidian-sync-script.md
+  s_3005a246dc665b::t_c969adac22646e 10-11
+wiki/guides/documentation-in-repo.md
+  s_3005a246dc665b::t_89d0498cbf4b32 5,8-9,14,26-27
+wiki/guides/local-dev-and-verify.md
+  s_3005a246dc665b::t_c10b79d3fcbfce 5,8-9,34,36,43,50
+wiki/index.md
+  s_3005a246dc665b::t_b36e002c3d96ae 2-5,7-10,13,15,17-21,23,25-26,30-33,37-39,43-44,48-61
+wiki/log.md
+  s_3005a246dc665b::t_7c31cf114e6019 2-5,7-10,13,15,20-25
+wiki/memories/simplemem-in-wiki.md
+  s_3005a246dc665b::t_fda4be08ecfa47 3,7-9,19,27-29
+wiki/sources/docs-project-rules.md
+  s_3005a246dc665b::t_3914c8e5a921f7 9-10
+wiki/sources/docs-sync-system.md
+  s_3005a246dc665b::t_79e685534a65da 9-10
+wiki/sources/docs-upload-feature.md
+  s_3005a246dc665b::t_166b7ef4800a8a 5,8-10,17-18
+wiki/sources/readme-project-overview.md
+  s_3005a246dc665b::t_6ee37574e4641e 5,9-10,20,22
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "7601caf51e598a702261ea6505c3d5ac1f11b6de",
+  "prompts": {},
+  "sessions": {
+    "s_3005a246dc665b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d191f050-3799-404f-88a4-d500fcf7252a",
+        "model": "claude-opus-5-5"
+      },
+      "human_author": "nicholas andrew eymann <thedao@nicholass-Mac-Studio.local>"
+    }
+  }
+}
