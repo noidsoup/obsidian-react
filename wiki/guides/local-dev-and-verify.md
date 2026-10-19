@@ -2,9 +2,11 @@
 title: Local dev and verify
 type: guide
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-10-19
 tags: [dev, verify, netlify]
 status: active
+summary: "Run the dev server, the tests, the verify gate, sync and LanceDB locally; deploy via Netlify."
+last_verified: 2026-10-19
 ---
 
 # Local dev and verify
@@ -29,23 +31,23 @@ npm run dev
 ### Tests
 
 ```bash
-npm test              # Jest watch
+npm test              # Jest watch — never exits; agents use test:ci
 npm run test:ci       # Jest once
-npm run test:sync     # Python sync tests
+npm run test:sync     # Python sync tests (calls `python`; use python3 sync/__tests__/sync.test.py if missing)
 npm run test:all      # both suites
 ```
 
 ### Production build
 
 ```bash
-npm run build         # test:all + next build
+npm run build         # prebuild (vault.zip → vault/) + test:all + next build
 npm start             # serve out/ on :3000
 ```
 
 ### Verify gate
 
 ```bash
-bash .verify.sh       # npm test + npm build (repo ground-truth)
+npm run verify        # .verify.sh: npm run test:ci + npm run build (maps python→python3)
 ```
 
 ### Obsidian sync (optional)

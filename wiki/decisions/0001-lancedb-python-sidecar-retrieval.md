@@ -4,7 +4,9 @@ type: decision
 created: 2026-07-30
 updated: 2026-07-30
 tags: [lancedb, retrieval, adr]
-status: accepted
+status: active
+summary: "Accepted 2026-07-30: ship Python LanceDB scripts as a sidecar for semantic doc search in this Next.js repo."
+last_verified: 2026-07-30
 ---
 
 # LanceDB Python sidecar for retrieval

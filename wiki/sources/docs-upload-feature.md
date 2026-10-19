@@ -2,15 +2,19 @@
 title: Upload feature guide
 type: source
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-10-19
 tags: [upload, zip, user-facing]
 sources: ["UPLOAD_FEATURE.md"]
-status: active
+status: superseded
+summary: "Superseded digest of UPLOAD_FEATURE.md: the browser zip upload, which the static export doesn't serve."
+last_verified: 2026-10-19
 ---
 
 # Upload feature guide
 
 Compiled from `UPLOAD_FEATURE.md`: browser zip upload for non-developer users.
+
+> **Superseded (checked 2026-10-19):** this flow is not live. The site is a static export and the page doesn't render the upload form — see [[0002-static-export-not-upload]].
 
 ## Key points
 

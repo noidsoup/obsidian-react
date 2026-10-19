@@ -6,6 +6,8 @@ updated: 2026-07-30
 tags: [obsidian, bases, yaml, frontmatter]
 aliases: [bases, frontmatter, yaml-properties]
 status: active
+summary: "YAML frontmatter parsed by gray-matter and shown as Bases property badges on each card."
+last_verified: 2026-07-30
 ---
 
 # Obsidian Bases YAML frontmatter

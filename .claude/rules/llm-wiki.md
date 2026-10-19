@@ -1,17 +1,17 @@
 ---
 description: "LLM Wiki — read the project wiki's SCHEMA.md before any wiki operation"
 paths:
-  - "* wiki/**"
+  - "wiki/**"
 ---
 
 # LLM Wiki
 
-This project's Obsidian vault is **`obsidian-react wiki/`** (repository folder name + space + `wiki`).
+This project's wiki (an Obsidian vault) is **`wiki/`** at the repo root.
 
 Before creating, updating, or querying wiki pages, read the vault's `SCHEMA.md` for conventions.
 
 The vault uses `[[wikilinks]]` for internal links. Every page has YAML frontmatter.
 
-When the user says "ingest", "add to wiki", "lint wiki", or "query wiki", follow the workflows in SCHEMA.md.
+When the user says "ingest", "add to wiki", "lint wiki", or "query wiki", follow the workflows in SCHEMA.md. Lint: `python3 ~/.claude/skills/closeout/wiki-template/wiki_lint.py .`
 
 After significant work sessions, suggest filing key decisions and learnings into the wiki (ADRs in `decisions/`, runbooks in `guides/`).

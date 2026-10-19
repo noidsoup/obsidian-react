@@ -1,14 +1,6 @@
-# Where is the LLM wiki?
+# Where is the wiki?
 
-The Obsidian vault is **not** a folder named `wiki`.
+The project wiki (an Obsidian vault) is **`wiki/`** at the repo root. It was renamed from `obsidian-react wiki/` on 2026-10-19.
 
-It lives at:
-
-**`obsidian-react wiki/`**
-
-There is a **space** between the repo name and `wiki` (project wiki naming rule: *repository folder name* + space + `wiki`).
-
-- **In Obsidian:** *Open folder as vault* → choose the `obsidian-react wiki` directory inside this repo.
-- **In your editor / Explorer:** expand the repo root and look for **`obsidian-react wiki`** (not `wiki` alone).
-
-Start here: **`obsidian-react wiki/SCHEMA.md`**.
+- Start at `wiki/index.md`; conventions are in `wiki/SCHEMA.md`.
+- In Obsidian: *Open folder as vault* → `wiki/`.

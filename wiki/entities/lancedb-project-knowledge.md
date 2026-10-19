@@ -2,10 +2,12 @@
 title: LanceDB project knowledge search
 type: entity
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-10-19
 tags: [lancedb, retrieval, semantic-search]
 aliases: [lancedb, project-knowledge]
 status: active
+summary: "Offline LanceDB + sentence-transformers search over repo docs, rules and this wiki."
+last_verified: 2026-10-19
 ---
 
 # LanceDB project knowledge search
@@ -31,7 +33,8 @@ Governed by `.claude/rules/project-knowledge-lancedb.md` (always applied). Optio
 - **Adoption:** [[0001-lancedb-python-sidecar-retrieval]] — Python sidecar in a Next.js repo.
 - **Env:** `PROJECT_KNOWLEDGE_LANCEDB_DIR` in `.env` overrides default index path.
 - **Agent duty:** re-index after editing indexed content before close-out.
-- **Retrieval order:** SimpleMem (if present) → LanceDB → vault recall → long-term memory.
+- **Scope (2026-10-19):** `AGENTS.md`, `README.md`, memory files, `.claude/rules` and `.claude/skills`, plus `docs/` and `wiki/` when present (`scripts/project_knowledge_lancedb_common.py`). The wiki became indexed when it was renamed to `wiki/`.
+- **Retrieval order:** LanceDB → cross-repo vault recall → long-term memory (`.claude/rules/pre-task-retrieval.md`).
 
 ## Related
 

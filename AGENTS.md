@@ -5,13 +5,16 @@
 
 Claude Code loads this file through `.claude/CLAUDE.md`; always-on rules are in `.claude/rules/`.
 
+**Project wiki:** read `wiki/index.md` before non-trivial work; open pages it points to only when relevant.
+After a repeated failure, check `wiki/gotchas.md`. Writing to the wiki: follow `wiki/SCHEMA.md`.
+
 ## Retrieval order (read before acting)
 
 Governed by `.claude/rules/pre-task-retrieval.md`. Cheapest-first:
 1. LanceDB (`.venv-lancedb/bin/python -u scripts/search_project_knowledge_lancedb.py "<question>" --top-k 8`)
 → 2. cross-repo vault recall → 3. long-term memory.
 
-The LanceDB index covers `AGENTS.md`, `README.md`, `MEMORY.md`, `AI_SESSION_MEMORY.md` and `.claude/rules/`. It skips the wiki and the other root docs (add the wiki with `PROJECT_KNOWLEDGE_LANCEDB_EXTRA_DIRS` in `.env`); for those, start at `obsidian-react wiki/index.md`.
+The LanceDB index covers `AGENTS.md`, `README.md`, `MEMORY.md`, `AI_SESSION_MEMORY.md`, `.claude/rules/` and `wiki/`. It skips the other root docs (add them with `PROJECT_KNOWLEDGE_LANCEDB_EXTRA_DIRS` in `.env`).
 
 ## Invariants (always apply)
 
@@ -48,7 +51,6 @@ npm run sync            # copy notes from sync.config.json's vault into vault/
 | Obsidian → `vault/` sync | `sync/sync_obsidian.py`, `SYNC.md`, `sync.config.json.example` |
 | TDD rule and test inventory | `PROJECT_RULES.md`, `TESTING.md`, `TDD_FLOW.md` |
 | Netlify deploy | `netlify.toml`, `DEPLOY.md`, `SIMPLE_DEPLOY.md` |
-| Project wiki (Obsidian vault) | `obsidian-react wiki/`: read `obsidian-react wiki/SCHEMA.md` first (`.claude/rules/llm-wiki.md`) |
 | Context7 library IDs | `.cursor/context7-libraries.md` (see `.claude/rules/context7.md`) |
 | Recent decisions | `AI_SESSION_MEMORY.md`, `MEMORY.md` |
 | Workflows (plan, tdd, gate, migrate…) | global `.loops/` (say "use the loops") |

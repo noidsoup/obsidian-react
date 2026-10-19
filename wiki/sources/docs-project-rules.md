@@ -6,6 +6,8 @@ updated: 2026-07-30
 tags: [tdd, project-rules]
 sources: ["PROJECT_RULES.md"]
 status: active
+summary: "Digest of PROJECT_RULES.md: every change needs an automated test; build blocks on failure."
+last_verified: 2026-07-30
 ---
 
 # Project rules — prove your logic

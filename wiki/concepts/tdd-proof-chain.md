@@ -7,6 +7,8 @@ tags: [tdd, testing, quality]
 aliases: [proof-chain, test-first]
 sources: ["[[docs-project-rules]]", "PROJECT_RULES.md", "TESTING.md"]
 status: active
+summary: "Write the failing test first; npm run build runs all tests before next build."
+last_verified: 2026-07-30
 ---
 
 # TDD proof chain

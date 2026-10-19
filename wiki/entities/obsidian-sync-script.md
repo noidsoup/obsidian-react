@@ -7,6 +7,8 @@ tags: [sync, python, obsidian]
 aliases: [sync_obsidian.py, vault-sync]
 sources: ["[[docs-sync-system]]"]
 status: active
+summary: "sync/sync_obsidian.py copies .md notes from a local Obsidian vault into vault/ (12 tests)."
+last_verified: 2026-07-30
 ---
 
 # Obsidian sync script

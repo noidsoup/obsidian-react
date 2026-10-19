@@ -2,10 +2,12 @@
 title: README project overview
 type: source
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-10-19
 tags: [readme, overview]
 sources: ["README.md"]
 status: active
+summary: "Digest of README.md: purpose, structure, commands; the upload path it describes is stale."
+last_verified: 2026-10-19
 ---
 
 # README project overview
@@ -15,9 +17,9 @@ One-paragraph summary of the obsidian-react repository from the root README.
 ## Key points
 
 - **Purpose:** Static Next.js site that displays Obsidian notes with Bases (YAML frontmatter) properties as badges.
-- **User path:** Upload `vault.zip` in the browser — no setup required for non-developers.
+- **User path:** Upload `vault.zip` in the browser — no setup required for non-developers. *(Stale: not live since the static export, see [[0002-static-export-not-upload]].)*
 - **Developer path:** Sync from local Obsidian vault → `/vault` → push → Netlify auto-rebuild.
-- **Quality gate:** TDD with ~47 automated tests (Jest + Python sync); deploy blocked if tests fail.
+- **Quality gate:** TDD with ~47 automated tests (runners report 33 Jest + 12 sync, 2026-10-10) (Jest + Python sync); deploy blocked if tests fail.
 - **Stack:** Next.js 15, React 18, gray-matter, adm-zip, formidable; static export to `out/`.
 
 ## Detailed notes

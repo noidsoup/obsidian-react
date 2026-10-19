@@ -2,14 +2,16 @@
 title: Documentation in the repo vs this wiki
 type: guide
 created: 2026-07-30
-updated: 2026-07-30
+updated: 2026-10-19
 tags: [documentation, onboarding]
 status: active
+summary: "Which root doc holds what (AGENTS, README, rules, delivery notes) vs this wiki."
+last_verified: 2026-10-19
 ---
 
 # Documentation in the repo vs this wiki
 
-This vault (**`obsidian-react wiki/`**) holds **compiled, linked knowledge** for humans and LLMs (entities, concepts, ADRs, runbooks). It does not replace every markdown file at the repo root.
+This vault (**`wiki/`**, renamed from `obsidian-react wiki/` on 2026-10-19) holds **compiled, linked knowledge** for humans and LLMs (entities, concepts, ADRs, runbooks). It does not replace every markdown file at the repo root.
 
 ## Canonical repo docs (live outside the vault)
 
@@ -21,7 +23,8 @@ This vault (**`obsidian-react wiki/`**) holds **compiled, linked knowledge** for
 | `PROJECT_RULES.md` | TDD proof-chain rule (non-negotiable). |
 | `TESTING.md` | Test inventory and TDD workflow. |
 | `SYNC.md` / `UPLOAD_FEATURE.md` | Developer sync and user upload guides. |
-| `WIKI.md` | Pointer to this vault (`obsidian-react wiki/`). |
+| `WIKI.md` | Pointer to this vault (`wiki/`). |
+| `FINAL_DELIVERY.md` | Oct 2025 hand-off note; describes the upload flow that isn't live. |
 | `memories/memories.json` | **SimpleMem** local store (when added). Wiki: [[simplemem-in-wiki]]. |
 
 ## Docs ingest (batch 2026-07-30)

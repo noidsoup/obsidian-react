@@ -6,6 +6,8 @@ updated: 2026-07-30
 tags: [sync, python, developer]
 sources: ["SYNC.md"]
 status: active
+summary: "Digest of SYNC.md: config, commands and behaviour of the Obsidian to vault/ sync."
+last_verified: 2026-07-30
 ---
 
 # Obsidian vault sync system
