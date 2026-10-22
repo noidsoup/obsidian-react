@@ -30,3 +30,4 @@ uncommitted/
 # Claude Code local state
 .claude/worktrees/
 .claude/settings.local.json
+*.tsbuildinfo

@@ -8,6 +8,17 @@ Claude Code loads this file through `.claude/CLAUDE.md`; always-on rules are in 
 **Project wiki:** read `wiki/index.md` before non-trivial work; open pages it points to only when relevant.
 After a repeated failure, check `wiki/gotchas.md`. Writing to the wiki: follow `wiki/SCHEMA.md`.
 
+## Working rules
+
+1. **Think before coding.** State assumptions, surface tradeoffs, ask before guessing.
+2. **Simplicity first.** Minimum code that solves the problem; no speculative abstractions.
+3. **Surgical changes.** Touch only what the task needs. Match the existing style.
+4. **Read before you write.** Read the file's exports and its caller before adding to it.
+5. **Fail loud.** If you can't be sure it worked, say so. Never report skipped work as done.
+6. **Check after every change.** Run the type check / tests from "Commands" after each edit.
+7. **Behavior changes ship with tests**, where a test runner exists (see "What can be verified").
+8. **Never ratchet a test to match current output.** Find why it changed; decide whether the code or the test is wrong.
+
 ## Retrieval order (read before acting)
 
 Governed by `.claude/rules/pre-task-retrieval.md`. Cheapest-first:
@@ -26,7 +37,23 @@ The LanceDB index covers `AGENTS.md`, `README.md`, `MEMORY.md`, `AI_SESSION_MEMO
 6. **No app secrets.** The app reads no env vars. Only the LanceDB scripts read `.env` (gitignored; see `.env.example`).
 7. **Docs drift from the code.** `README.md` and `UPLOAD_FEATURE.md` describe a zip-upload page, but `app/page.tsx` does not render `UploadForm`, and the static export (`out/`) has no `/api/upload`. Test counts in the root docs (25 to 47) are stale; the runners report 33 Jest and 12 sync tests. Trust the code and the runner output.
 
-## Definition of done (commands)
+## Commands (tested) — definition of done
+
+Runtime: Node 22.22 / npm 10.9 locally (no `.nvmrc`, no `engines`); Netlify builds on Node 20 (`netlify.toml`).
+Python 3.9 system `python3` for the sync tests. · Last verified: 2026-10-22 on `origin/main` (7601caf).
+
+| Task | Command (root) | Result 2026-10-22 |
+| ---- | -------------- | ----------------- |
+| Install | `npm ci` | exit 0, 5s |
+| Type check | `npx tsc --noEmit` | exit 2: 17 errors, all in test files (baseline below). Writes `tsconfig.tsbuildinfo` (gitignored). |
+| Test (Jest) | `npm run test:ci` | exit 0: 5 suites, 33 tests |
+| Test (sync) | `python3 sync/__tests__/sync.test.py` | exit 0: 12 tests. `npm run test:sync` exits 127 (`python: command not found`) on this Mac. |
+| Verify gate | `npm run verify` (`bash .verify.sh`) | exit 0, 11s: Jest + build (adds a temporary `python` shim) |
+| Build | `npm run build` | via verify: exit 0, static export of `/` |
+| Dev server | `npm run dev` | port 3000, "Ready" in ~1s; page renders "No notes found." with an empty `vault/` |
+| Not run | `npm start` (fetches `serve@latest` at run time), `npm run sync` (needs a local `sync.config.json`) | |
+
+All scripts:
 
 ```bash
 npm run verify          # .verify.sh: Jest once + npm run build — the agent gate
@@ -39,6 +66,35 @@ npm run build:netlify   # what Netlify runs: prebuild + test:ci + next build
 npm start               # serve out/ on :3000
 npm run sync            # copy notes from sync.config.json's vault into vault/
 ```
+
+## Known baseline
+
+`origin/main` 7601caf, 2026-10-22: **`npx tsc --noEmit` reports 17 errors**, all TS2339 `toBeInTheDocument`
+in `app/__tests__/page.test.tsx` (4) and `app/components/__tests__/NoteCard.test.tsx` (13): the jest-dom
+matcher types are not visible to `tsc` (the import is in `jest.setup.js`). `next build` still passes, and
+Jest, sync tests, and the build are clean.
+
+## What can be verified
+
+Jest (lib, page, NoteCard), the Python sync tests, the type check (against the baseline above), and the
+static build. UI changes: look at them on the dev server. Netlify deploys are not something agents run.
+
+## Running locally and logging in
+
+No login: the site is public and static, with no auth and no backend. Local runs read only `vault/`
+(empty unless you add `vault.zip`, run `npm run import-vault <zip>`, or `npm run sync`).
+
+## Dev vs production gotchas
+
+- Netlify uses Node 20; this Mac runs Node 22. Nothing pins Node locally.
+- `next build` lists `/api/upload` as a dynamic route, yet `out/` contains no `api/`: the upload API exists only under `next dev`.
+
+## Git and push safety
+
+- Owner: personal (`noidsoup/obsidian-react`). Default branch: `main`. Work on a branch.
+- Push to origin only with Nicholas's OK. Netlify deploys from the repo: never run `netlify deploy`.
+- Root `CLAUDE.md` is git-excluded (Origin rewrites it); commit with `git -c core.hooksPath=.git/hooks commit`
+  to keep Origin trailers out.
 
 ## Topic → where
 
